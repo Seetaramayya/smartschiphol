@@ -41,6 +41,7 @@ public class SchipholActivity extends Activity {
             public void onClick(View v) {
                 String flightNumber = flightNumberEditText.getText().toString();
                 Log.d(TAG, "Flight number is: " + flightNumber);
+                flightInfoTextView.setText("Getting flight information...");
                 if (flightNumber != null && !"".equals(flightNumber.trim())) {
                     new LoadFlightData().execute(flightNumber);
                 } else {
