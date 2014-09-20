@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        tools:context="com.smartschiphol.WelcomeActivity">
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="top"
+            android:orientation="horizontal"
+            android:background="#cccccccc">
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/welcome_to_smartschiphol" android:padding="20dp"/>
+    </LinearLayout>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:gravity="center_vertical">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Please enter your flight number"
+                android:id="@+id/textView"
+                android:layout_marginTop="45dp"
+                android:layout_alignParentTop="true" android:layout_centerHorizontal="true"/>
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText" android:layout_below="@+id/textView"
+                android:layout_alignStart="@+id/textView" android:layout_marginLeft="95dp"
+                android:layout_marginTop="19dp" android:layout_alignEnd="@+id/textView"/>
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:id="@+id/welcome_submit_button" android:layout_below="@+id/editText" android:layout_alignEnd="@+id/editText"
+                android:layout_marginTop="18dp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:background="#cccccccc">
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="@string/welcome_bottom_text" android:paddingLeft="40dp" android:paddingTop="25dp"/>
+    </LinearLayout>
+
+</LinearLayout>

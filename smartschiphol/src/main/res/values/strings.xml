@@ -6,5 +6,9 @@
     <string name="action_settings">Settings</string>
     <string name="pnr_number">eg: FL123456</string>
     <string name="submit">Submit</string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="welcome_to_smartschiphol">Welcome to SmartSchiphol</string>
+    <string name="welcome_bottom_text">Team Code2BV</string>
+    <string name="title_activity_show_info">ShowInfoActivity</string>
 
 </resources>
