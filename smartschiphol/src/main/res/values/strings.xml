@@ -4,5 +4,7 @@
     <string name="app_name">SmartSchiphol</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="pnr_number">eg: FL123456</string>
+    <string name="submit">Submit</string>
 
 </resources>
