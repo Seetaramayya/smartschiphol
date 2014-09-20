@@ -9,25 +9,32 @@
     tools:context="com.smartschiphol.SchipholActivity">
 
     <EditText
-            android:id="@+id/pnr_number"
-            android:layout_width="match_parent"
+            android:id="@+id/flightNumber"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:hint="@string/pnr_number" />
+            android:hint="@string/pnr_number"
+            android:layout_below="@+id/welcomeText"
+            android:layout_marginTop="24dp"/>
 
     <Button
-            android:id="@+id/submit"
+            android:id="@+id/submitButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/pnr_number"
-            android:layout_centerHorizontal="true"
-            android:text="@string/submit" />
+            android:text="@string/submit"
+            android:layout_below="@+id/flightNumber" android:layout_alignEnd="@+id/flightNumber"/>
 
     <TextView
-            android:id="@+id/text"
-        android:text="@string/hello_world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/submit"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Please enter your flight number and click Submit to be notified about this flight."
+            android:id="@+id/welcomeText" android:layout_alignParentTop="true" android:layout_alignParentStart="true"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/flightInfo"
+            android:layout_marginTop="35dp" android:layout_below="@+id/submitButton"
+            android:layout_alignParentStart="true"/>
 
 </RelativeLayout>

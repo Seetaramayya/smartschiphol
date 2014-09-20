@@ -32,6 +32,10 @@ public class FlightServiceImpl implements FlightService {
         Response response = restService.getDepartingFlight(flightNumber);
         JsonNode flightNode = new ObjectMapper().readTree(response.getBody().in()).get("Flights").get("Flight");
 
+        if (flightNode == null) {
+            return null;
+        }
+
         String scheduleDateText = flightNode.get("ScheduleDate").asText().substring(0, 10);
         String scheduleTimeText = flightNode.get("ScheduleTime").asText();
 

@@ -1,7 +1,6 @@
 package com.smartschiphol;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,41 +10,45 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import com.smartschiphol.flightservice.Flight;
 import com.smartschiphol.flightservice.FlightService;
 import com.smartschiphol.flightservice.FlightServiceImpl;
 
-import javax.xml.transform.Result;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 
 
 public class SchipholActivity extends Activity {
     private static final String TAG = "SchipholActivity";
+
     private final FlightService flightService = new FlightServiceImpl();
-    private EditText pnrNumberEditText;
-    private TextView textView;
+
+    private EditText flightNumberEditText;
+    private TextView flightInfoTextView;
+    private Button submitButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schiphol);
 
-        pnrNumberEditText = (EditText) findViewById(R.id.pnr_number);
-        textView = (TextView) findViewById(R.id.text);
-        final Button loadButton = (Button) findViewById(R.id.submit);
-        loadButton.setOnClickListener(new View.OnClickListener() {
+        flightNumberEditText = (EditText) findViewById(R.id.flightNumber);
+        flightInfoTextView = (TextView) findViewById(R.id.flightInfo);
+        submitButton = (Button) findViewById(R.id.submitButton);
+
+        submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String pnrNumber = pnrNumberEditText.getText().toString();
-                Log.d(TAG, "PNR Number is " + pnrNumber);
-                if (pnrNumber != null && !"".equals(pnrNumber.trim())) {
-                    new LoadFlightData().execute(pnrNumber);
+                String flightNumber = flightNumberEditText.getText().toString();
+                Log.d(TAG, "Flight number is: " + flightNumber);
+                if (flightNumber != null && !"".equals(flightNumber.trim())) {
+                    new LoadFlightData().execute(flightNumber);
                 } else {
-                    textView.setText("Enter PNR NUMBER");
+                    flightInfoTextView.setText("");
                 }
             }
         });
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -71,16 +74,21 @@ public class SchipholActivity extends Activity {
         @Override
         protected String doInBackground(String... params) {
             try {
-                return flightService.getDepartingFlight(params[0]).toString();
+                Flight flight = flightService.getDepartingFlight(params[0]);
+                if (flight != null) {
+                    String dateTime = new SimpleDateFormat("d MMM yyyy HH:mm").format(flight.getScheduleDateTime());
+                    return "Your flight is scheduled at " + dateTime + " at gate " + flight.getGate() +
+                            ".\n\nPlease make sure to be at the gate at least 30 minutes in advance.";
+                }
             } catch (IOException e) {
-                e.printStackTrace();
+                Log.e(TAG, "An error occurred in the webservice call", e);
             }
-            return null;
+            return "Flight information is not available.";
         }
 
         @Override
         protected void onPostExecute(String s) {
-            textView.setText(s);
+            flightInfoTextView.setText(s);
         }
     }
 }
