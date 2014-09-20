@@ -1,4 +1,4 @@
-package com.seeta.rss.smartschiphol.smartschiphol;
+package com.smartschiphol;
 
 import android.app.Activity;
 import android.os.Bundle;
