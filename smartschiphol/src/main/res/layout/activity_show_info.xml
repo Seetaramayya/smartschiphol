@@ -1,16 +1,94 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.smartschiphol.ShowInfoActivity">
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.smartschiphol.ShowInfoActivity" android:weightSum="1">
 
-    <TextView
-        android:text="@string/hello_world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:background="#cccccccc" android:layout_weight="0.7">
+        <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Flight Number"
+                    android:layout_column="0" android:layout_margin="5dp"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="flightNumber"
+                    android:id="@+id/flightNumberTextView" android:layout_column="1" android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp" android:layout_marginRight="5dp" android:layout_marginBottom="5dp"/>
+        </TableRow>
+        <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Gate"
+                    android:layout_column="0" android:layout_margin="5dp"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="gate"
+                    android:id="@+id/gateTextView" android:layout_column="1" android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp" android:layout_marginRight="5dp" android:layout_marginBottom="5dp"/>
+        </TableRow>
+        <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Status"
+                    android:layout_column="0" android:layout_margin="5dp"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="status"
+                    android:id="@+id/statusTextView" android:layout_column="1" android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp" android:layout_marginRight="5dp" android:layout_marginBottom="5dp"/>
+        </TableRow>
+        <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Boarding Time"
+                    android:layout_column="0" android:layout_margin="5dp"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="boardingTime"
+                    android:id="@+id/boardingTimeTextView" android:layout_column="1" android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp" android:layout_marginRight="5dp" android:layout_marginBottom="5dp"/>
+        </TableRow>
+    </TableLayout>
 
-</RelativeLayout>
+    <GridView
+            android:id="@+id/promotionGridView"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:columnWidth="90dp"
+            android:numColumns="auto_fit"
+            android:verticalSpacing="20dp"
+            android:horizontalSpacing="20dp"
+            android:stretchMode="columnWidth">
+    </GridView>
+
+</LinearLayout>

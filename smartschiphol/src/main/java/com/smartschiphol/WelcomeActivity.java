@@ -8,6 +8,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import com.smartschiphol.flightservice.Flight;
+import com.smartschiphol.flightservice.FlightState;
+
+import java.util.Calendar;
 
 
 public class WelcomeActivity extends Activity {
@@ -22,7 +26,20 @@ public class WelcomeActivity extends Activity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(WelcomeActivity.this, ShowInfoActivity.class));
+                Intent intent = new Intent(WelcomeActivity.this, ShowInfoActivity.class);
+
+                Calendar cal = Calendar.getInstance();
+                cal.add(Calendar.HOUR, 2);
+
+                Flight fake = new Flight();
+                fake.setFlightNumber("HV611");
+                fake.setScheduleDateTime(cal.getTime());
+                fake.setGate("D12");
+                fake.setState(FlightState.SCHEDULED);
+
+                intent.putExtra(ShowInfoActivity.EXTRA_FLIGHT, fake);
+
+                startActivity(intent);
             }
         });
     }
