@@ -13,12 +13,13 @@
             android:layout_weight="1"
             android:gravity="top"
             android:orientation="horizontal"
-            android:background="#cccccccc">
+            android:background="#FFFFBB00">
         <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/welcome_to_smartschiphol" android:padding="20dp"/>
+                android:text="@string/welcome_to_smartschiphol" android:padding="20dp"
+                android:textColor="#FF222222"/>
     </LinearLayout>
 
     <RelativeLayout
@@ -54,11 +55,12 @@
             android:layout_weight="1"
             android:gravity="bottom"
             android:orientation="horizontal"
-            android:background="#cccccccc">
+            android:background="#FFFFBB00">
         <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:text="@string/welcome_bottom_text" android:paddingLeft="40dp" android:paddingTop="25dp"/>
+                android:text="@string/welcome_bottom_text" android:paddingLeft="40dp" android:paddingTop="25dp"
+                android:textColor="#FF222222"/>
     </LinearLayout>
 
 </LinearLayout>

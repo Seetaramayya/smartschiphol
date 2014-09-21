@@ -9,7 +9,7 @@
     <TableLayout
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
-            android:background="#cccccccc" android:layout_weight="0.7">
+            android:background="#FFFFBB00" android:layout_weight="0.7">
         <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent">
@@ -17,13 +17,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Flight Number"
+                    android:text="Flight Number" android:textColor="#FF222222"
                     android:layout_column="0" android:layout_margin="5dp"/>
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="flightNumber"
+                    android:text="flightNumber" android:textColor="#FF222222"
                     android:id="@+id/flightNumberTextView" android:layout_column="1" android:layout_marginLeft="20dp"
                     android:layout_marginTop="5dp" android:layout_marginRight="5dp" android:layout_marginBottom="5dp"/>
         </TableRow>
@@ -34,13 +34,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Gate"
+                    android:text="Gate" android:textColor="#FF222222"
                     android:layout_column="0" android:layout_margin="5dp"/>
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="gate"
+                    android:text="gate" android:textColor="#FF222222"
                     android:id="@+id/gateTextView" android:layout_column="1" android:layout_marginLeft="20dp"
                     android:layout_marginTop="5dp" android:layout_marginRight="5dp" android:layout_marginBottom="5dp"/>
         </TableRow>
@@ -51,13 +51,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Status"
+                    android:text="Status" android:textColor="#FF222222"
                     android:layout_column="0" android:layout_margin="5dp"/>
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="status"
+                    android:text="status" android:textColor="#FF222222"
                     android:id="@+id/statusTextView" android:layout_column="1" android:layout_marginLeft="20dp"
                     android:layout_marginTop="5dp" android:layout_marginRight="5dp" android:layout_marginBottom="5dp"/>
         </TableRow>
@@ -68,13 +68,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Boarding Time"
+                    android:text="Boarding Time" android:textColor="#FF222222"
                     android:layout_column="0" android:layout_margin="5dp"/>
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="boardingTime"
+                    android:text="boardingTime" android:textColor="#FF222222"
                     android:id="@+id/boardingTimeTextView" android:layout_column="1" android:layout_marginLeft="20dp"
                     android:layout_marginTop="5dp" android:layout_marginRight="5dp" android:layout_marginBottom="5dp"/>
         </TableRow>
