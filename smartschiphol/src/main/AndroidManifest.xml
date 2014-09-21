@@ -3,12 +3,20 @@
     package="com.smartschiphol" >
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
+        android:exported="true">
         android:theme="@style/AppTheme" >
+
+
+
         <activity
             android:name="com.smartschiphol.SchipholActivity"
             android:label="@string/app_name" >
@@ -20,12 +28,23 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+                <action android:name="android.net.wifi.STATE_CHANGE"/>
             </intent-filter>
+
         </activity>
         <activity
             android:name="com.smartschiphol.ShowInfoActivity"
             android:label="@string/title_activity_show_info" >
         </activity>
+        <receiver android:name="com.smartschiphol.AutoWifi" >
+            <intent-filter>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+                <action android:name="android.net.wifi.STATE_CHANGE"/>
+            </intent-filter>
+
+        </receiver>
+
     </application>
 
 </manifest>
